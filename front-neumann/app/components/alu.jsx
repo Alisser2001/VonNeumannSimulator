@@ -10,11 +10,11 @@ export default function ALU({accumulator, r_entry}) {
             </div>
             <div className="flex flex-row w-full h-auto justify-center items-center mt-5">
                 <div className="flex flex-col w-1/2 h-auto justify-center items-center ml-5">
-                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center">{accumulator ? accumulator : ""}</span>
+                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{accumulator ? accumulator : ""}</span>
                     <h1>Accumulator</h1>
                 </div>
                 <div className="flex flex-col w-1/2 h-auto justify-center items-center mr-5">
-                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center">{r_entry ? r_entry : ""}</span>
+                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{r_entry ? r_entry : ""}</span>
                     <h1>R. Entry</h1>
                 </div>
             </div>
