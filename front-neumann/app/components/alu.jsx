@@ -1,6 +1,6 @@
 "use client"
 
-export default function ALU({accumulator, r_entry}) {
+export default function ALU({accumulator, r_entry, actualChange}) {
     return (
         <section className="flex absolute flex-col min-w-[500px] min-h-[300px] bg-[#e2ffcf] right-96 top-20 border-[#7bed2f] border-2 z-30">
             <h1 className="ml-1">ALU</h1>
@@ -10,11 +10,11 @@ export default function ALU({accumulator, r_entry}) {
             </div>
             <div className="flex flex-row w-full h-auto justify-center items-center mt-5">
                 <div className="flex flex-col w-1/2 h-auto justify-center items-center ml-5">
-                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{accumulator ? accumulator : ""}</span>
+                    <span className={`w-40 h-12 bg-white flex flex-row justify-center items-center tabular-nums ${actualChange=="accumulator" ? 'border-red-500 border-8' : 'border-2 border-black'}`}>{accumulator ? accumulator : ""}</span>
                     <h1>Accumulator</h1>
                 </div>
                 <div className="flex flex-col w-1/2 h-auto justify-center items-center mr-5">
-                    <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{r_entry ? r_entry : ""}</span>
+                    <span className={`w-40 h-12 bg-white flex flex-row justify-center items-center tabular-nums ${actualChange=="r_entry" ? 'border-red-500 border-8' : 'border-2 border-black'}`}>{r_entry ? r_entry : ""}</span>
                     <h1>R. Entry</h1>
                 </div>
             </div>
