@@ -1,16 +1,17 @@
 "use client"
 
-export default function Memory({r_directions, table_of_memory, r_data}) {
+export default function Memory({r_directions, table_of_memory, r_data, actualChange}) {
+    console.log(actualChange)
     return (
         <section className="flex absolute flex-row min-w-[800px] min-h-[400px] bg-[#ffe8cf] bottom-32 border-[#fa992f] border-2 z-30 flex-wrap items-start">
             <h1 className="ml-1 h-5 w-full">Memory</h1>
             <div className="flex flex-col w-1/3 h-auto justify-center items-center">
-                <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{r_directions ? r_directions : ""}</span>
+                <span className={`w-40 h-12 bg-white flex flex-row justify-center items-center tabular-nums ${actualChange=="r_directions" ? 'border-red-500 border-8' : 'border-2 border-black'}`}>{r_directions ? r_directions : ""}</span>
                 <h1>R. Directions</h1>
             </div>
             <div className="flex flex-col w-1/3 h-auto justify-center items-center">
                 <h1>Table of Memory</h1>
-                <table className="flex w-full h-auto flex-col border-black border-2 tabular-nums">
+                <table className={`flex w-full h-auto flex-col tabular-nums ${actualChange=="table_of_memory" ? 'border-red-500 border-8' : 'border-2 border-black'}`}>
                     <thead className="w-full">
                         <tr className="w-full border-b-2 border-black bg-[#fa992f]">
                             <th className="w-[104px] border-r-2 border-black">Direction</th>
@@ -58,7 +59,7 @@ export default function Memory({r_directions, table_of_memory, r_data}) {
                 </table>
             </div>
             <div className="flex flex-col w-1/3 h-auto justify-center items-center">
-                <span className="w-40 h-12 border-2 border-black bg-white flex flex-row justify-center items-center tabular-nums">{r_data ? r_data : ""}</span>
+                <span className={`w-40 h-12 bg-white flex flex-row justify-center items-center tabular-nums ${actualChange=="r_data" ? 'border-red-500 border-8' : 'border-2 border-black'}`}>{r_data ? r_data : ""}</span>
                 <h1>R. Data</h1>
             </div>
         </section>
